@@ -131,8 +131,6 @@ services:
     container_name: browser
     image: browserless/chrome:latest
     hostname: browser
-    volumes:
-      - ./bot_api/.wwebjs_auth/session/:/usr/src/app/user-data-dir
     environment:
       CONNECTION_TIMEOUT: -1
       KEEP_ALIVE: 'true'
