@@ -1,0 +1,18 @@
+.PhotosContainer {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 10px;
+}
+
+.Row {
+  display: grid;
+  justify-items: center;
+}
+
+.SecondR {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}

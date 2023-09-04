@@ -1,0 +1,153 @@
+newMessage .container {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+newMessage .row {
+    display: grid;
+}
+
+newMessage .col {
+    display: grid;
+}
+
+newMessage .firstRow {
+    grid-row: 1;
+}
+
+newMessage .headlineBorder{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #57C5B6;
+}
+
+newMessage .progressBar {
+    width: 85%;
+    height: 5px;
+    background: #57C5B6;
+}
+
+newMessage .headline {
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+newMessage .secondRow {
+    margin-top: 1rem;
+    grid-template-columns: 0.2fr 0.6fr 0.2fr; 
+}
+
+newMessage .firstCol{
+    grid-column: 1;
+    height: 50rem;
+    overflow-y: auto;
+    border-right: 1px solid #B9B7B7;
+}
+
+.buttonPosition {
+    margin-left: 40%;
+}
+newMessage .secondRow .firstCol .addGroups #Button_c {
+    width: 48px;
+    height: 48px;
+    background: #159895;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 7%;
+}
+
+.borderLine {
+    grid-column: 1;
+    border: 1px solid #B5B4B4;
+    width: 42.5px;
+    stroke-width: 1px;
+    margin-top:10%;    
+    padding-left: 11%;
+}
+
+.groupsPosition {
+    grid-template-rows: auto;
+    padding-left: 15%;
+    padding-top: 5%;
+}
+
+.selectedGroups {
+    margin-top: 5%;
+    width: 176px;
+    height: 35px;
+    border-radius: 20px;
+    border: 1px solid #159895;
+}
+
+newMessage .secondColumn {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 3fr;
+    margin-left: 5%;
+}
+
+newMessage input[type=text] {
+    grid-row: 1;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 90%;
+    height: 40%;
+    font-size: 30px;
+    margin-top: 5%;
+}   
+
+newMessage .secondColumn .multRow {
+    display: grid;
+    grid-template-columns: 10% 50% 40%;
+    margin-top: 5%;
+}
+
+.logoPos {
+    margin-top: 35%;
+}
+.datePicker {
+    width: 60%;
+    height: 50%;
+    padding-left: 5%;
+}
+
+.timePicker {
+    width: 60%;
+    height: 50%;
+}
+
+.selectRepeat {
+    width: 60%;
+    height: 50%;
+    padding-top: 4%;
+    padding-left: 5%;
+}
+
+newMessage input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    border-radius: 2px;
+    border: 2px solid black;
+    background: #FFF;
+    margin-top: 10%;
+}
+
+newMessage .editor {
+    margin-top: 5%;
+    margin-left: 5%;
+    height: 80%;
+    width: 170%;
+}
+
+newMessage .saveButton #Button_c {
+    grid-column: 3;
+    width: 166px;
+    height: 43px;
+    border-radius: 20px;
+    background: #159895;
+    margin-top: 20%;
+    margin-left: 10%;
+}

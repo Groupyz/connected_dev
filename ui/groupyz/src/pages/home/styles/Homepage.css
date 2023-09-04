@@ -1,0 +1,51 @@
+homepage .container {
+    display: grid;
+    grid-template-rows: 0.4fr 0.15fr 1fr;
+    grid-gap: 1rem;
+    background-image: url(../images/background.svg);
+    background-size: 80rem 80rem;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+homepage .container .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headlinesContainer {
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 3.7rem;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #22577A;
+    grid-row: 1;
+}
+
+.subHeadlinesContainer {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.8rem;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: black;
+}
+
+homepage .container .row .buttonContainer #Button_c{
+    width: 247px;
+    height: 68px;
+    font-style: normal; 
+    font-weight: 600;
+    font-size: 25px;
+    letter-spacing: 0.01em;
+    grid-row: 2;
+}
+
+homepage .container .photosContainer {
+    overflow: hidden;
+    padding-bottom: 10rem;
+    grid-row: 3;
+}

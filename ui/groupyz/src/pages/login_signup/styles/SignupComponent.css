@@ -1,0 +1,11 @@
+signupComponent loginComponent .signupContainer {
+    display: grid;
+    grid-template-rows: 0.7fr 0.7fr 0.7fr 0.7fr 0.7fr 0.7fr 0.7fr 0.7fr;
+    grid-gap: 15px;
+}
+
+
+signupComponent .signupContainer .row {
+    display: grid;
+    justify-content: left;
+}

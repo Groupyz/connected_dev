@@ -1,0 +1,171 @@
+version: '3.9'
+services:
+# ---------------------UI-------------------------------
+  ui_app:
+    container_name: ui_app
+    build: ./ui/groupyz
+    restart: always
+    ports:
+      - '3002:3000'
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      - groupyz_net
+# ------------------------------------------------------
+# ----------------- USR --------------------------------
+  user_api:
+    container_name: user_api
+    build: ./usr_api/api
+    restart: always
+    ports:
+      - '5050:5050'
+    volumes:
+      - ./usr_api/api:/User_app
+    depends_on:
+      - user_db
+    environment:
+      - DB_URL=postgresql://postgres:postgres@user_db:5432/postgres
+    networks:
+      - groupyz_net
+
+  user_db:
+    container_name: user_db
+    image: postgres:12
+    restart: always
+    expose:
+      - "5432"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    networks:
+      - groupyz_net
+    command: -p 5432
+# ----------------------------------------------------
+# -------------------Grp------------------------------
+  groups_api:
+    container_name: groups_api
+    build: ./grp_api/api
+    restart: always
+    ports:
+      - '5051:5050'
+    volumes:
+      - ./grp_api/api:/Groups_app
+    depends_on:
+      - groups_db
+      - user_api
+    environment:
+      - DB_URL=postgresql://postgres:postgres@groups_db:5433/postgres
+    networks:
+      - groupyz_net
+
+  groups_db:
+    container_name: groups_db
+    image: postgres:12
+    depends_on:
+      - user_db
+    restart: always
+    expose:
+      - "5433"
+    ports:
+      - "5433:5433"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    networks:
+      - groupyz_net
+    command: -p 5433
+# ----------------------------------------------------
+# ------------------Msg-------------------------------
+  messages_api:
+    container_name: messages_api
+    build: ./msg_api/app
+    restart: always
+    ports:
+      - '5052:5051'
+    volumes:
+      - ./msg_api/app:/Messages_app
+    depends_on:
+      - messages_db
+      - groups_api
+    environment:
+      - DB_URL=postgresql://postgres:postgres@messages_db:5434/postgres
+    networks:
+      - groupyz_net
+
+  messages_db:
+    container_name: messages_db
+    image: postgres:12
+    depends_on:
+      - groups_db
+    restart: always
+    expose:
+      - "5434"
+    ports:
+      - "5434:5434"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    networks:
+      - groupyz_net
+    command: -p 5434
+# ----------------------------------------------------
+# ----------------------Bot---------------------------
+  bot_api:
+    build: ./bot_api
+    restart: always
+    ports:
+      - 3001:3001
+    networks:
+      - groupyz_net
+    environment:
+      BROWSER_URL: 'ws://browser:3000'
+    depends_on:
+      - browser
+    command: bash -c 'while !</dev/tcp/browser/3000; do sleep 1; done; node whats-app-bot-events/index.js'
+  browser:
+    container_name: browser
+    image: browserless/chrome:latest
+    hostname: browser
+    volumes:
+      - ./bot_api/.wwebjs_auth/session/:/usr/src/app/user-data-dir
+    environment:
+      CONNECTION_TIMEOUT: -1
+      KEEP_ALIVE: 'true'
+      WORKSPACE_EXPIRE_DAYS: 1
+      ENABLE_CORS: 'true'
+      CHROME_REFRESH_TIME: 86400000
+      DEFAULT_BLOCK_ADS: 'true'
+      FUNCTION_ENABLE_INCOGNITO_MODE: 'true'
+      ENABLE_XVBF: 'true'
+      CHROME_PATH: '/usr/bin/google-chrome'
+      USE_CHROME_STABLE: 'true'
+      NODE_ENV: 'production'
+      MAX_CONCURRENT_SESSIONS: 1
+      DEFAULT_USER_DATA_DIR: /usr/src/app/user-data-dir
+    ports:
+      - 3000:3000
+    networks:
+      - groupyz_net
+# ----------------------------------------------------
+# --------------------Schedule------------------------
+  scheduler:
+    container_name: scheduler
+    build: ./scheduler
+    restart: always
+    ports:
+      - '5053:5053'
+    volumes:
+      - ./scheduler:/scheduler_app
+    networks:
+      - groupyz_net
+# ----------------------------------------------------
+
+
+networks:
+  groupyz_net:
+    driver: bridge

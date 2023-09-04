@@ -1,0 +1,19 @@
+LoginSignup .container {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    grid-gap: 1rem;
+}
+
+.imageContainer {
+    grid-column: 2;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loginSignupCompContainer {
+    grid-column: 1;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}

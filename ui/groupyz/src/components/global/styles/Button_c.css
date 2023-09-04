@@ -1,0 +1,11 @@
+#Button_c {
+  background: #57C5B6;
+  border-radius: 50px;
+  text-transform: none;
+}
+
+.image {
+  justify-content: left;
+  padding: 0.5rem;
+  padding-top: 1rem
+}

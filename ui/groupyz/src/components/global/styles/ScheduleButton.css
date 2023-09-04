@@ -1,0 +1,19 @@
+.schedule {
+    padding-top: 3rem;
+    padding-right: 3rem;
+}
+
+.schedule #Button_c {
+    width: 290px;
+    height: 54px;
+    border-radius: 20px;
+    border: 2px solid #22577A;
+    color: #22577A;
+    font-weight: 600;
+    background: none;
+    padding: 1rem;
+}
+
+.schedule .img  {
+    padding-top: 0.5rem;
+}

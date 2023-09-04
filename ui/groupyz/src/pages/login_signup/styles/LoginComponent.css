@@ -1,0 +1,109 @@
+loginComponent .loginContainer {
+    display: grid;
+    grid-template-rows: 0.7fr 0.7fr 0.7fr 0.7fr 0.7fr 0.7fr 1fr 0.7fr 0.7fr 0.7fr;
+    grid-gap: 5px;
+}
+
+loginComponent .loginContainer .row {
+    display: grid;
+    justify-content: left;
+}
+
+.welcomeContainer {
+    grid-row: 1;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: normal;
+    padding-top: 25%;
+}
+
+.subWelcomeContainer {
+    grid-row: 2;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.row .googleButton #Button_c {
+    grid-row: 3;
+    width: 323px;
+    height: 48px;
+    letter-spacing: 0.08px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding:1rem;
+}
+
+.seperator {
+    position: relative;
+    text-align: center;
+}
+
+ .row .seperator .text {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+
+.multRow {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+input[type=text] {
+    grid-column: 1;
+    border: none;
+    border-bottom: 2px solid black;
+    height: 50%;
+    width: 150%;
+}
+
+.label {
+    font-size: 14px;
+    padding: 0.9rem;
+}
+
+ .multRow .forgotPassword #Button_c{
+    grid-column: 2;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration-line: underline;
+    background-color: white;
+    color: black; 
+    border-radius: none;
+    border: none;
+    padding: 1rem;
+}
+
+.row .loginButton #Button_c {
+    grid-row: 8;
+    width: 323px;
+    height: 48px;
+    border-radius: 10px;
+    background-color: #159895;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.08px;
+}
+
+.signup {
+    grid-column: 1;
+    display: flex;
+    padding-top: 0.35rem;
+    justify-content: right;
+    font-size: 12px;
+    text-align: center;
+}
+
+ .multRow .signupButton #Button_c {
+    grid-column: 2;
+    justify-content: left;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: none;
+    border: none;
+    background-color: white;
+    color: black;
+}

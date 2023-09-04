@@ -1,0 +1,18 @@
+users created:
+id=1{'user': {'email': 'terry@gmail.com', 'first_name': 'Terry', 'id': 1, 'last_name': 'Jeffords', 'password': '10'}}
+users created:
+id=2{'user': {'email': 'charles@gmail.com', 'first_name': 'Charles', 'id': 2, 'last_name': 'Boyle', 'password': '11'}}
+users updated:
+id=3{'user': {'email': 'jake@gmail.com', 'first_name': 'Jake', 'id': 3, 'last_name': 'Peralta', 'password': '11'}}
+users created:
+id=1{'user': {'email': 'terry@gmail.com', 'first_name': 'Terry', 'id': 1, 'last_name': 'Jeffords', 'password': '10'}}
+users created:
+id=2{'user': {'email': 'charles@gmail.com', 'first_name': 'Charles', 'id': 2, 'last_name': 'Boyle', 'password': '11'}}
+users updated:
+id=3{'user': {'email': 'jake@gmail.com', 'first_name': 'Jake', 'id': 3, 'last_name': 'Peralta', 'password': '11'}}
+users created:
+id=1{'user': {'email': 'terry@gmail.com', 'first_name': 'Terry', 'id': 1, 'last_name': 'Jeffords', 'password': '10'}}
+users created:
+id=2{'user': {'email': 'charles@gmail.com', 'first_name': 'Charles', 'id': 2, 'last_name': 'Boyle', 'password': '11'}}
+users updated:
+id=3{'user': {'email': 'jake@gmail.com', 'first_name': 'Jake', 'id': 3, 'last_name': 'Peralta', 'password': '11'}}

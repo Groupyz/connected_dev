@@ -1,0 +1,26 @@
+2023/09/04-09:52:54.569 21 Reusing MANIFEST /usr/src/app/user-data-dir/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/09/04-09:52:54.601 21 Recovering log #42
+2023/09/04-09:52:54.658 21 Reusing old log /usr/src/app/user-data-dir/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000042.log 
+2023/09/04-09:52:54.678 21 Delete type=2 #30
+2023/09/04-09:52:54.678 21 Delete type=2 #31
+2023/09/04-09:52:54.678 21 Delete type=2 #50
+2023/09/04-09:52:54.678 21 Delete type=2 #51
+2023/09/04-09:52:55.535 34 Compacting 1@1 + 2@2 files
+2023/09/04-09:52:56.231 34 Generated table #51@1: 50146 keys, 2217299 bytes
+2023/09/04-09:52:56.605 34 Generated table #52@1: 3283 keys, 2155726 bytes
+2023/09/04-09:52:56.865 34 Generated table #53@1: 9058 keys, 1131635 bytes
+2023/09/04-09:52:56.866 34 Compacted 1@1 + 2@2 files => 5504660 bytes
+2023/09/04-09:52:56.872 34 compacted to: files[ 0 0 4 0 0 0 0 ]
+2023/09/04-09:52:56.886 34 Delete type=2 #39
+2023/09/04-09:52:56.886 34 Delete type=2 #46
+2023/09/04-09:52:56.887 34 Delete type=2 #48
+2023/09/04-09:53:06.954 28 Level-0 table #55: started
+2023/09/04-09:53:07.139 28 Level-0 table #55: 851357 bytes OK
+2023/09/04-09:53:07.156 28 Delete type=0 #42
+2023/09/04-09:53:07.158 23 Compacting 1@1 + 4@2 files
+2023/09/04-09:53:07.786 23 Generated table #56@1: 50119 keys, 2220205 bytes
+2023/09/04-09:53:08.134 23 Generated table #57@1: 3285 keys, 2154671 bytes
+2023/09/04-09:53:08.803 23 Generated table #58@1: 20602 keys, 2218462 bytes
+2023/09/04-09:53:09.214 23 Generated table #59@1: 33834 keys, 1156895 bytes
+2023/09/04-09:53:09.215 23 Compacted 1@1 + 4@2 files => 7750233 bytes
+2023/09/04-09:53:09.221 23 compacted to: files[ 0 0 4 0 0 0 0 ]

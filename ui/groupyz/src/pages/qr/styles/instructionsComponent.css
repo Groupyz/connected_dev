@@ -1,0 +1,90 @@
+instructionsComponent .instructionsContainer {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  grid-template-rows: 0.1fr 0.7fr;
+  grid-gap: 5px;
+}
+
+instructionsComponent .instructionsContainer .row {
+  display: grid;
+  padding-left: 24%;
+}
+
+instructionsComponent .instructionsContainer .col {
+  display: grid;
+  padding-top: 10%;
+}
+
+.titleContainer {
+  grid-row: 1;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: normal;
+  padding-top: 3%;
+}
+
+.stepsContainer {
+  grid-row: 2;
+  font-size: 20px;
+  line-height: normal;
+}
+
+.scanContainer {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  place-items: center;
+  height: 500px;
+}
+
+.scanIconContainer {
+  padding-left: 60%;
+  margin-top: -90%;
+}
+
+.scanTitleContainer {
+  font-size: 25px;
+  font-weight: 700;
+  padding-left: 30%;
+  margin-top: -80%;
+  width: 100%;
+}
+
+.scanContentContainer {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: -60%;
+  width: 150%;
+}
+
+.scanFrameContainer {
+  padding-top: 7%;
+  padding-left: 4%;
+}
+
+.changeAppContainer {
+  display: grid;
+  align-content: center;
+  font-size: 30px;
+  font-weight: 500;
+  grid-row: 2;
+  place-items: center;
+  padding-left: 70%;
+  display: table;
+  padding-top: 10%;
+}
+
+.whatsappButton {
+  float: left;
+  padding-right: 4%;
+}
+
+.telegramButton {
+  float: left;
+  padding-right: 4%;
+}
+
+.facebookButton {
+  float: left;
+  padding-right: 5%;
+}

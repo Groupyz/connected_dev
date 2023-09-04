@@ -1,0 +1,66 @@
+
+header .container {
+    display: grid;
+    background-color: #F7F9FB;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-gap: 1.5rem;
+}
+
+.loginSignupContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+header .container .logoContainer {
+    grid-column: 1;
+    display: flex;
+    justify-content: left;
+    padding-left: 3rem;
+}
+
+.scheduleContainer {
+    grid-column: 2;
+    display: flex;
+    justify-content: left;
+    padding-top: 4rem;
+    font-weight: 600;
+    color: #38A3A5;
+}
+header .loginButton {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 3rem;
+    padding-left: 3rem;
+}
+
+header .loginButton #Button_c {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    border: 2px solid #1A5F7A;
+    color: #1A5F7A;
+    background: none;
+    border-radius: 50px;
+}
+
+header .signupButton {
+    grid-column: 2;
+    grid-row:1;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 3rem;
+    padding-right: 3rem;
+}
+
+header .signupButton #Button_c {
+    grid-row: 1;
+    grid-column: 3;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    background: #1A5F7A;
+    border-radius: 50px;
+    color: #FFFFFF;
+}
