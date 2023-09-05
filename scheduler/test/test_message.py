@@ -1,10 +1,15 @@
 import datetime
+import pytest
+import json
 from message import Message
 
 
-def test_valid_create_message_obj():
-    message = create_message_obj()
+@pytest.fixture
+def message():
+    return create_message_obj()
 
+
+def test_valid_create_message_obj(message):
     assert message is not None
     assert message.user_id == "342342fsd"
     assert isinstance(message.group_ids, list)
@@ -23,6 +28,15 @@ def test_invalid_create_message_obj():
         create_message_obj(**date_message)
     except Exception as e:
         assert str(e) == "Time to send is not in correct datetime format."
+
+
+def test_message_to_JSON(message):
+    message_as_json = json.dumps(message.__dict__)
+    message_dict = json.loads(message_as_json)
+    assert "group_ids" in message_dict
+    assert "message_data" in message_dict
+    assert isinstance(message_dict.get("group_ids"), list)
+    assert isinstance(message_dict.get("message_data"), str)
 
 
 def create_message_obj(**kwargs) -> Message:
