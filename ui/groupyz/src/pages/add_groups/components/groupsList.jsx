@@ -15,7 +15,6 @@ const GroupsList = ({
   useEffect(() => {
     axios.get(URL).then((response) => {
       setData(response.data["groups"]);
-      console.log(response.data["groups"]);
     });
   }, []);
 

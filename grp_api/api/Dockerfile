@@ -6,7 +6,7 @@ WORKDIR /Groups_app
 
 EXPOSE 5050
 
-COPY Pipfile Pipfile.lock ./
+COPY Pipfile Pipfile.lock ./ 
 
 RUN pip install pipenv
 RUN pipenv requirements > requirements.txt
