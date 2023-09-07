@@ -1,12 +1,11 @@
 from datetime import datetime
 from dataclasses import dataclass, fields
-from dataclasses_json import dataclass_json
 from log.log_handler import log
 
 
-@dataclass_json
 @dataclass
 class Message:
+
     user_id: str
     group_ids: list
     message_data: str
@@ -28,3 +27,14 @@ class Message:
             return True
         except ValueError:
             return False
+
+    def __str__(self) -> str:
+        return f"Message(user_id={self.user_id}, group_ids={self.group_ids}, message_data={self.message_data}, time_to_send={self.time_to_send})"
+
+    def to_json(self) -> dict:
+        return {
+            "user_id": self.user_id,
+            "group_ids": self.group_ids,
+            "message_body": self.message_data,
+            "time_to_send": self.time_to_send
+        }

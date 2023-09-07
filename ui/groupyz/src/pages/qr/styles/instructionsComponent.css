@@ -38,28 +38,29 @@ instructionsComponent .instructionsContainer .col {
 }
 
 .scanIconContainer {
-  padding-left: 60%;
-  margin-top: -90%;
+  padding-left: 50%;
 }
 
 .scanTitleContainer {
   font-size: 25px;
   font-weight: 700;
   padding-left: 30%;
-  margin-top: -80%;
   width: 100%;
 }
 
 .scanContentContainer {
   font-size: 16px;
   font-weight: 400;
-  margin-top: -60%;
+  padding-left: 10%;
   width: 150%;
 }
 
-.scanFrameContainer {
-  padding-top: 7%;
-  padding-left: 4%;
+.loadingContainer {
+  margin-left: 20%;
+}
+
+.qrContainer {
+  margin-left: -3%;
 }
 
 .changeAppContainer {
