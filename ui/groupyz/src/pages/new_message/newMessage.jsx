@@ -67,15 +67,16 @@ const NewMessage = () => {
     const config = {
       headers: { "Content-Type": "application/json" },
     };
-    axios.post("http://localhost:5052/message", data, config).catch((error) => {
+    axios.post("http://localhost:5052/message", data, config).then(() => {
+      window.location.href = "./dashboard";
+    }).catch((error) => {
       if (error.response) {
         toast.error(error.response.data.message, {
           position: toast.POSITION.TOP_CENTER,
         });
       }
-    });
-    window.location.href = "./dashboard";
-  };
+  });
+};
 
   const editorModules = {
     toolbar: [
