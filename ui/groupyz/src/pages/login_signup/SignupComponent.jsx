@@ -6,8 +6,10 @@ import line from "./images/Line.svg";
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const SignupComponent = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState([]);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -30,13 +32,18 @@ const SignupComponent = () => {
     const config = {
       headers: { "Content-Type": "application/json" },
     };
-    axios.post("http://localhost:5050/user", data, config).catch((error) => {
-      if (error.response) {
-        toast.error(error.response.data.message, {
-          position: toast.POSITION.TOP_CENTER,
-        });
-      }
-    });
+    axios
+      .post("http://localhost:5050/user", data, config)
+      .then(() => {
+        navigate("/qr");
+      })
+      .catch((error) => {
+        if (error.response) {
+          toast.error(error.response.data.message, {
+            position: toast.POSITION.TOP_CENTER,
+          });
+        }
+      });
   };
 
   return (
