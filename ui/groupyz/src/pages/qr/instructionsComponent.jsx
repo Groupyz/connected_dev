@@ -3,10 +3,14 @@ import scan from "./images/scan.svg";
 import whatsapp from "./images/whatsapp.svg";
 import telegram from "./images/telegram.svg";
 import facebook from "./images/facebook.svg";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router";
+
+const QR_URL = "http://localhost:3001/qr";
+const GROUPS_URL = "http://localhost:5051/groups/1";
 
 const showToastMessage = () => {
   toast.error("Not Supported!", {
@@ -17,12 +21,38 @@ const showToastMessage = () => {
 const InstructionsComponent = () => {
   const [qrCode, setQrCode] = useState(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
   useEffect(() => {
-    axios.get("http://localhost:3001/qr").then((response) => {
-      setQrCode(response.data);
-      setLoading(false);
-    });
-  }, []);
+    // Function to load QR code
+    const loadQrCode = () => {
+      axios.get(QR_URL).then((response) => {
+        setQrCode(response.data);
+        setLoading(false);
+        // Wait for 30 seconds before sending a GET request to groups_api
+        setTimeout(() => {
+          toast.success("QR code scanned successfully!\nRedirecting...", {
+            position: toast.POSITION.TOP_CENTER,
+            timeout: 10000,
+          });
+          axios
+            .get(GROUPS_URL)
+            .then(() => {
+              // After the second GET request, wait for 10 seconds and then redirect
+              setTimeout(() => {
+                navigate("/addgroups");
+              }, 10000);
+            })
+            .catch(() => {
+              navigate("/addgroups");
+            });
+        }, 30000);
+      });
+    };
+
+    loadQrCode();
+  }, [navigate]); // Include history in the dependency array
+
   return (
     <instructionsComponent>
       <div class="instructionsContainer">
