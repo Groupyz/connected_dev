@@ -36,6 +36,7 @@ const NewMessage = () => {
   const [selectedGroups, setSelectedGroups] = useState(preSelectedGroups);
   const [headline, setHeadline] = useState("");
   const [message, setMessage] = useState("");
+  const [repeat, setRepeat] = useState("");
 
   const handleGroupDeselection = (groupName) => {
     setSelectedGroups((prevSelectedGroups) =>
@@ -53,11 +54,12 @@ const NewMessage = () => {
     const timeToSend = date + " " + time;
     const messageData = message;
     const messageTitle = headline;
+    const repeatSet = repeat;
 
     const data = JSON.stringify({
       user_id: 1,
-      repeat: "once",
-      dest_groups_id: destGroupsId,
+      repeat: repeatSet,
+      group_ids: destGroupsId,
       time_to_send: timeToSend,
       message_data: messageData,
       message_title: messageTitle,
@@ -162,7 +164,11 @@ const NewMessage = () => {
                   <div class="selectRepeat">
                     <FormControl fullWidth>
                       <InputLabel id="repeat">repeat</InputLabel>
-                      <Select placeholder="repeat">
+                      <Select
+                        labelId="repeat"
+                        value={repeat}
+                        onChange={(repeat) => setRepeat(repeat.target.value)}
+                      >
                         <MenuItem value="once">Once</MenuItem>
                         <MenuItem value="weekly">Weekly</MenuItem>
                         <MenuItem value="monthly">Monthly</MenuItem>

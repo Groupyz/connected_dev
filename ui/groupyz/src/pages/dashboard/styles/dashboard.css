@@ -7,11 +7,12 @@ dashboard .dashboardCompenent {
 dashboard .dashboardCompenent .row {
     display: grid;
     padding-left: 24%;
+    padding-top: 1%;
 }
 
-dashboard .dashboardCompenent .col {
+dashboard .dashboardCompenent .column {
     display: grid;
-    padding-top: 10%;
+    margin-top: -1%;
 }
 
 
@@ -83,31 +84,29 @@ dashboard .dashboardCompenent .col {
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 0em;
-    grid-column: 2;
-    grid-row: 1;
     padding-top: 1%;
-    margin-left: -1.5%;
+    margin-left: 5%;
+    margin-bottom: -4%;
 }
 
-.messageRow {
-    grid-row: 1;
+.messagesCol {
+    grid-template-rows: auto;
 }
+
 .messageRectangle {
     width: 800px;
     height: 123px;
     border-radius: 20px;
     border: 3px solid #57C5B6;
     grid-column: 2;
-    grid-row: 1;
     margin-left: -2%;
     position: relative;
     margin-top: 4%;
 }
 
 .messageTitle {
-    font-size: 16px;
+    font-size: 30px;
     font-weight: 600;
-    margin-top: -14.5%;
     padding-left: 2%;
 }
 
@@ -117,17 +116,17 @@ dashboard .dashboardCompenent .col {
 }
 
 .dateTime {
-    margin-left: -23.5%;
-    margin-top: -7%;
+    margin-left: -24%;
+    margin-top: -7.5%;
 }
 
 .arrows {
-    margin-left: 8%;
+    margin-left: 9%;
     margin-top: -6%;
 }
 
 .repeat {
     margin-left: 14%;
-    margin-top: -8.5%;
+    margin-top: -9%;
 }
 

@@ -1,6 +1,8 @@
 
 FROM python:3.11
 
+ENV SCHED_URL='http://scheduler:5053'
+
 WORKDIR /Messages_app
 
 EXPOSE 5051

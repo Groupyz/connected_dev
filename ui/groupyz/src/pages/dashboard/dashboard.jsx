@@ -1,12 +1,11 @@
 import "./styles/dashboard.css";
 import Button_c from "../../components/global/Button_c";
 import dashboard from "./images/dashboard.svg";
-import clock from "./images/clock.svg";
-import arrows from "./images/arrows.svg";
+import Messages from "./components/messages.jsx";
 
 const Dashboard = () => (
   <dashboard>
-    <div class="dashboardCompenent">
+    <div className="dashboardCompenent">
       <div class="column">
         <div className="dashboardLeft">
           <div className="myDashboard">
@@ -33,33 +32,7 @@ const Dashboard = () => (
           </div>
         </div>
       </div>
-      <div class="column">
-        <div className="messageRow">
-          <div className="Messages">
-            <p>Messages</p>
-          </div>
-          <div className="messagesData">
-            <div className="messageRectangle" />
-          </div>
-          <div className="messageTitle">
-            <p>Message headline</p>
-          </div>
-          <div class="row">
-            <div className="clock">
-              <img src={clock} />
-            </div>
-            <div className="dateTime">
-              <p>Sunday, 2PM</p>
-            </div>
-            <div className="arrows">
-              <img src={arrows} />
-            </div>
-            <div className="repeat">
-              <p>Every week</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Messages />
     </div>
   </dashboard>
 );
