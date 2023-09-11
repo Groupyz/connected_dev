@@ -28,19 +28,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint \"./src/**/*.{js,jsx}\"",
-    "lint-fix": "eslint \"./src/**/*.{js,jsx}\" --fix"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:prettier/recommended"
-    ]
-  },
-  "prettier": {
-    "endOfLine": "auto"
+    "eject": "react-scripts eject"
   },
   "browserslist": {
     "production": [
@@ -53,10 +41,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.8"
   }
 }
